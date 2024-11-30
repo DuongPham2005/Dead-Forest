@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
 
     public Animator animator;
     // Update is called once per frame
-
+    public DamageZone damageZone;
     public enum CharacterState
     {
         Normal,
@@ -74,5 +74,14 @@ public class Character : MonoBehaviour
     public void OnAttack01End()
     {
         ChangeState(CharacterState.Normal);
+    }
+
+    public void BeginAttack()
+    {
+        damageZone.BeginAttack();
+    }
+    public void EndAttack()
+    {
+       damageZone.EndAttack();
     }
 }
